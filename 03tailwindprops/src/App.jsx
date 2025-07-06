@@ -7,11 +7,12 @@ import Card from "./components/Card.jsx"
 function App() {
 
   let myobj = {
-   username: "Deepak",
-    age:21
-  }
-   let newArr = [1,2,3]
-
+    username: "Deepak",
+    age: 21,
+  };
+  let newArr = [1, 2, 3];
+ 
+  
   return (
     <>
       <h1 className="bg-green-400 text-orange-500 p-4 rounded-xl">
