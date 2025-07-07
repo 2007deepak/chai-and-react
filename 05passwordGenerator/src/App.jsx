@@ -58,14 +58,16 @@ useEffect(() => {
     <>
       <div
         className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 py-2
-         text-orange-500  bg-gray-800"
+         text-yellow-600  bg-gray-800"
       >
-        <h1 className=" text-center mb-2 text-green-600">Password generator</h1>
-        <div className="flex  shadow rounded-lg overflow-hidden mb-4 relative">
+        <h1 className=" text-center font-bold text-3xl   mb-10 mt-10 text-fuchsia-500  uppercase">
+          Password generator
+        </h1>
+        <div className="flex  shadow rounded-lg overflow-visible mb-4 relative ">
           <input
             type="text"
             value={password}
-            className="outline-none w-full py-1 px-3"
+            className="outline-none w-full py-3 px-3 bg-violet-950 border-b-4 border-blue-800 font-semibold text-xl rounded-lg "
             placeholder="password"
             readOnly
             // ye dyan den check karan hai  outline-none bg-blue-700
@@ -75,38 +77,39 @@ useEffect(() => {
 
           <button
             onClick={handleCopy}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition "
+            className=" text-cyan-200  text-sm bg-blue-600 hover:bg-blue-500  font-bold text- rounded-lg px-2"
+            //onClick={handleCopy}
+            //className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition "
           >
             copy
           </button>
           {copied && (
             <>
               {console.log("Copied span rendered")}
-              <span className="absolute z-50 -top-6 left-1/2 transform -translate-x-1/2 text-green-400 text-sm bg-gray-900 px-2 py-1 rounded shadow"
-              style={{position: "static", color: "yellow"}}>
-                Copied!
+              <span className="absolute -top-6 right-0 bg-purple-600 text-yellow-300 px-1 py-1 rounded-3xl text-sm font-semibold shadow-lg transition-all duration-300 z-50">
+                copied
               </span>
             </>
           )}
         </div>
 
-        <div className="flex text-sm gap-x-2 ">
-          <div className="flex item-center gap-x-1">
+        <div className="flex flex-col text-sm gap-x-2 mt-10 mb-10 ">
+          <div className="flex items-center gap-x-1 text-lg">
             <input
               type="range"
               min={6}
               max={100}
               value={length}
-              className="cursor-pointer"
+              className="cursor-slider mt-4 mb-4 cursor-pointer w-64 rounded-md "
+              step={1}
               onChange={(e) => {
                 setlenght(e.target.value);
               }}
             />
-
             <label>Length:{length}</label>
           </div>
 
-          <div className="flex item-center gap-x-1">
+          <div className="flex item-center gap-x-1 text-lg">
             <input
               type="checkbox"
               defaultChecked={numberAllowed}
@@ -115,10 +118,10 @@ useEffect(() => {
                 setNumberAllowed((prev) => !prev);
               }}
             />
-            <label htmlFor="numberInput">Numbers</label>
+            <label htmlFor="numberInput"> Includes Numbers</label>
           </div>
 
-          <div>
+          <div className="flex item-center gap-x-1 text-lg ">
             <input
               type="checkbox"
               defaultChecked={charAllowed}
@@ -127,7 +130,7 @@ useEffect(() => {
                 setCharAllowed((prev) => !prev);
               }}
             />
-            <label htmlFor="charcterInput">Charcters</label>
+            <label htmlFor="charcterInput"> Includes Charcters</label>
           </div>
         </div>
       </div>
