@@ -14,3 +14,8 @@ function User() {
 }
 
 export default User
+
+// context ek provider hai jo saare  me ek wrapper laggyenge
+//Provider  kyuki ye hame iske ander ke components ko provide karega jisase ki vo componant context ke through statest ka context le  sakte hai 
+// Children yani jo bhi props aa rahe hia use as it is use karlo jai se div h2 
+//
