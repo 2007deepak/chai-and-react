@@ -1,9 +1,13 @@
-
-import {Link, NavLink} from 'react-router-dom'
-
-
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -15,6 +19,19 @@ export default function Header() {
               alt="Logo"
             />
           </Link>
+
+          {/* Hamburger - visible on small screens only */}
+          <div className="lg:hidden">
+            <button
+              onClick={toggleMenu}
+              type="button"
+              className="text-gray-800 focus:outline-none text-2xl"
+              aria-label="Toggle Menu"
+            >
+              ☰
+            </button>
+          </div>
+
           <div className="flex items-center lg:order-2">
             <Link
               to="#"
@@ -38,8 +55,13 @@ export default function Header() {
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200
-                  ${isActive} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                    `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                    lg:border-0 lg:p-0 lg:hover:bg-transparent hover:bg-gray-50
+                     ${
+                       isActive
+                         ? "text-red-600"
+                         : "text-gray-900 hover:text-red-600"
+                     }`
                   }
                 >
                   Home
@@ -50,8 +72,13 @@ export default function Header() {
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200
-                  ${isActive} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                    `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                    lg:border-0 lg:p-0 lg:hover:bg-transparent hover:bg-gray-50
+                    ${
+                      isActive
+                        ? "text-red-600"
+                        : "text-gray-900 hover:text-red-600"
+                    }`
                   }
                 >
                   About
@@ -61,8 +88,13 @@ export default function Header() {
                 <NavLink
                   to="/contact-us"
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200
-                  ${isActive} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                    `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                    lg:border-0 lg:p-0 lg:hover:bg-transparent hover:bg-gray-50
+                    ${
+                      isActive
+                        ? "text-red-600"
+                        : "text-gray-900 hover:text-red-600"
+                    }`
                   }
                 >
                   Contact
@@ -73,8 +105,13 @@ export default function Header() {
                 <NavLink
                   to="/Github"
                   className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200
-                  ${isActive} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                    `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100
+                     lg:border-0 lg:p-0 lg:hover:bg-transparent hover:bg-gray-50
+                     ${
+                       isActive
+                         ? "text-red-600"
+                         : "text-gray-900 hover:text-red-600"
+                     }`
                   }
                 >
                   Github
