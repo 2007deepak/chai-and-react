@@ -1,11 +1,13 @@
-import React from 'react'
+
+import { useState, useContext } from "react";
+import UserContext from '../context/Usercontext.js'
 
 function Login() {
 
      const [username,setUsername] = useState('')
      const [password,setPassword] = useState('')
 
-     const {setUser} = useContext(UseContext)
+     const {setUser} = useContext(UserContext)
 
      const submit =(e)=>{
         e.preventDefault()
@@ -21,7 +23,7 @@ function Login() {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="username"
-      />
+      />{" "}
 
       <input
         type="text"
